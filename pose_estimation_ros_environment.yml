@@ -1,0 +1,45 @@
+name: pose_estimation_ros
+channels:
+  - conda-forge
+  - defaults
+  - pytorch
+dependencies:
+  # 基础Python环境
+  - python=3.8
+  - pip
+  
+  # 科学计算基础包
+  - numpy
+  - scipy
+  - matplotlib
+  
+  # PyTorch和相关包 (CUDA 11.8)
+  - pytorch::pytorch
+  - pytorch::torchvision
+  - pytorch::torchaudio
+  - pytorch::pytorch-cuda=11.8
+  
+  # 几何和点云处理
+  - conda-forge::python-orocos-kdl
+  
+  # 配置文件处理
+  - pyyaml
+  
+  # 其他工具
+  - packaging
+  
+  # 通过pip安装的包
+  - pip:
+    # 点云处理
+    - open3d==0.19.0
+    
+    # ROS相关包
+    - rospkg
+    - catkin_pkg
+    
+    # 机器学习相关
+    - scikit-learn
+    
+    # 实用工具
+    - tqdm
+    - configargparse 
